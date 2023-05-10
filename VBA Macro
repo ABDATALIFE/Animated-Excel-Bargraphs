@@ -1,0 +1,23 @@
+Sub IsoscelesTriangle4_Click()
+
+
+
+    Dim i As Single
+    Dim SplitNo As Integer
+    Dim ChannelName As Integer
+    Dim SplitValue As Single
+    
+    Sheets("Calculation").Range("B2:B11").ClearContents
+    
+    SplitNo = Range("S1").Value
+    
+    For ChannelName = 1 To 10
+        SplitValue = Range("B2:C11").Cells(ChannelName, SplitNo).Value
+        
+        For i = 1 To SplitValue Step 1
+            Sheets("Calculation").Range("B2:B11").Cells(ChannelName) = i
+            DoEvents
+        Next i
+    Next ChannelName
+
+End Sub
